@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #0f1422;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(245, 158, 11, 0.09), transparent 70%),
+      radial-gradient(circle at 100% 35%, rgba(56, 189, 248, 0.05), transparent 50%),
+      radial-gradient(circle at 0% 65%, rgba(245, 158, 11, 0.06), transparent 50%),
+      linear-gradient(180deg, #131929 0%, #0f1422 50%, #0c101a 100%);
+    background-attachment: fixed;
+    color: #f8fafc;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Architectural Glass & Warm Amber / Champagne Gold Luxury Styling */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.72) 0%, rgba(15, 23, 42, 0.78) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.glass-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: linear-gradient(135deg, rgba(39, 53, 76, 0.85) 0%, rgba(22, 33, 56, 0.88) 100%);
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 14px 40px -10px rgba(245, 158, 11, 0.22), inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.glass-card-glow {
+  position: relative;
+}
+
+.glass-card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.35), rgba(217, 119, 6, 0.15), transparent 70%);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.glass-card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Ambient Mirror Light simulation (Warm Amber & Polished Crystal LEDs) */
+.led-glow-warm {
+  box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.45), inset 0 0 15px 0 rgba(245, 158, 11, 0.2);
+}
+
+.led-glow-gold {
+  box-shadow: 0 0 40px -5px rgba(251, 191, 36, 0.4), inset 0 0 15px 0 rgba(245, 158, 11, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f1422;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #253147;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Keyframe for 2-second slide progress bar */
+@keyframes slideProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-slide-progress {
+  animation: slideProgress 2s linear infinite;
+}
+
+/* Luxury Glass Edge Border Beam Animation */
+@keyframes borderBeamSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-border-beam {
+  animation: borderBeamSpin 9s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+

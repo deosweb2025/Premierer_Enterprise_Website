@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <!-- Dark Luxury Obsidian Background Gradient (matches exact dark brand background) -->
+    <linearGradient id="premBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1526" />
+      <stop offset="50%" stop-color="#090d18" />
+      <stop offset="100%" stop-color="#04060c" />
+    </linearGradient>
+
+    <!-- Slab 1 Gradient (Left - Shortest) -->
+    <linearGradient id="premBar1" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="60%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <!-- Slab 2 Gradient (Middle) -->
+    <linearGradient id="premBar2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e40af" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+
+    <!-- Slab 3 Gradient (Right - Tallest) -->
+    <linearGradient id="premBar3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="45%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#7dd3fc" />
+    </linearGradient>
+
+    <!-- Upward Dynamic Light Glow Filter -->
+    <filter id="premGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Swoosh Gradient -->
+    <linearGradient id="premSwooshGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#bae6fd" stop-opacity="0.8" />
+      <stop offset="35%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0f9ff" />
+    </linearGradient>
+  </defs>
+
+  <!-- Luxury Obsidian Rounded Base Tile (guarantees crystal-clear contrast on both dark & light browser tabs) -->
+  <rect width="128" height="128" rx="26" fill="url(#premBgGrad)" />
+
+  <!-- 3 Ascending Vertical Architectural Glass Bars -->
+  <!-- Bar 1 (Left): X=24..46 (width 22), Bottom=104, Top-Left=72, Top-Right=64 -->
+  <path
+    d="M24 72 L46 64 L46 104 L24 104 Z"
+    fill="url(#premBar1)"
+  />
+
+  <!-- Bar 2 (Middle): X=53..75 (width 22), Bottom=104, Top-Left=44, Top-Right=36 -->
+  <path
+    d="M53 44 L75 36 L75 104 L53 104 Z"
+    fill="url(#premBar2)"
+  />
+
+  <!-- Bar 3 (Right - Tallest): X=82..104 (width 22), Bottom=104, Top-Left=16, Top-Right=8 -->
+  <path
+    d="M82 16 L104 8 L104 104 L82 104 Z"
+    fill="url(#premBar3)"
+  />
+
+  <!-- Glowing Ascending Dynamic Swoosh Curve -->
+  <!-- Ambient Electric Cyan Aura -->
+  <path
+    d="M14 99 C 45 98, 77 87, 106 48 C 86 76, 50 100, 14 99 Z"
+    fill="#38bdf8"
+    opacity="0.75"
+    filter="url(#premGlow)"
+  />
+
+  <!-- Brilliant White Luminous Core -->
+  <path
+    d="M15 99 C 46 98, 77 86.5, 105 49 C 85 75, 51 99.5, 15 99 Z"
+    fill="url(#premSwooshGrad)"
+    filter="url(#premGlow)"
+  />
+
+  <!-- Crisp White Center Specular Arc -->
+  <path
+    d="M17 99 C 47 98.2, 76 87, 104 50 C 84 74.8, 51 99.2, 17 99 Z"
+    fill="#ffffff"
+  />
+</svg>
