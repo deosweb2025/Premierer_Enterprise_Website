@@ -21,6 +21,7 @@ const slideVariants = {
   enter: (direction) => ({
     x: direction > 0 ? '100%' : '-100%',
     opacity: 1,
+    zIndex: 1,
   }),
   center: {
     x: 0,
@@ -204,7 +205,7 @@ export default function Hero() {
 
           {/* Inner Card Container with Smooth Sliding Slideshow (Enlarged to h-[270px] xs:h-[310px]) */}
           <div className="relative rounded-[15px] overflow-hidden bg-slate-950 border border-amber-400/30 h-[270px] xs:h-[310px]">
-            <AnimatePresence initial={false} custom={direction} mode="wait">
+            <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={currentSlide}
                 custom={direction}
@@ -213,15 +214,16 @@ export default function Hero() {
                 animate="center"
                 exit="exit"
                 transition={{
-                  x: { type: 'tween', ease: [0.22, 1, 0.36, 1], duration: 0.75 },
-                  opacity: { duration: 0.25 },
+                  x: { type: 'tween', ease: [0.22, 1, 0.36, 1], duration: 0.7 },
+                  opacity: { duration: 0.2 },
                 }}
-                className="absolute inset-0 w-full h-full"
+                className="absolute inset-0 w-full h-full will-change-transform"
               >
                 <img
                   src={heroSlides[currentSlide].image}
                   alt={heroSlides[currentSlide].title}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center select-none"
+                  draggable="false"
                 />
               </motion.div>
             </AnimatePresence>
