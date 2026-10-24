@@ -77,11 +77,11 @@ export default function Hero() {
     setSlideState([targetIndex, dir]);
   };
 
-  // Smooth auto-transition every 6 seconds sliding right-to-left
+  // Smooth auto-transition every 2 seconds sliding right-to-left
   useEffect(() => {
     const timer = setInterval(() => {
       paginate(1);
-    }, 6000);
+    }, 2000);
 
     return () => clearInterval(timer);
   }, [paginate]);
@@ -139,8 +139,8 @@ export default function Hero() {
             animate="center"
             exit="exit"
             transition={{
-              x: { type: 'tween', ease: [0.22, 1, 0.36, 1], duration: 0.95 },
-              opacity: { duration: 0.25 },
+              x: { type: 'tween', ease: [0.22, 1, 0.36, 1], duration: 0.7 },
+              opacity: { duration: 0.2 },
             }}
             className="absolute inset-0 w-full h-full will-change-transform"
           >
