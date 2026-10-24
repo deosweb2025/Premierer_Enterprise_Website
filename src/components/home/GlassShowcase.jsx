@@ -14,7 +14,8 @@ import {
   Award,
   Layers,
   MapPin,
-  Clock
+  Clock,
+  Grid
 } from 'lucide-react';
 import { siteImages } from '../../data/siteData';
 import SectionHeading from '../common/SectionHeading';
@@ -168,6 +169,114 @@ export default function GlassShowcase() {
         icon: ShieldCheck,
         label: 'Safety Standard',
         value: 'IP44 Splashproof • IS Certified Toughened Glass'
+      }
+    },
+    {
+      id: 'partitions',
+      tabTitle: 'Toughened Partitions',
+      tabIcon: Grid,
+      tag: 'Acoustic Architecture',
+      category: 'Frameless Glass Walls',
+      titlePrefix: 'High-Tensile Certified Safety',
+      titleGradient: 'Toughened Glass Partitions',
+      eyebrow: 'ARCHITECTURAL PARTITIONS • 10MM & 12MM TOUGHENED',
+      image: siteImages.toughenedPartitions,
+      shortDesc: 'Engineered for contemporary corporate boardrooms, modern offices, and luxury luxury residences across Kolkata. Our frameless toughened glass partitions provide maximum natural daylight transmission paired with high acoustic buffering and zero visual clutter.',
+      features: [
+        {
+          title: '10mm & 12mm IS 2553 Certified Toughened Glass',
+          desc: 'High-tensile thermal tempered glass with impact resistance up to five times stronger than standard float glass.'
+        },
+        {
+          title: 'Concealed Floor Spring & Patch Glazing Channels',
+          desc: 'Minimalist anodized aluminium and stainless steel profile channels for a clean, uninterrupted floor-to-ceiling visual flow.'
+        },
+        {
+          title: 'Acoustic Noise Dampening & Precision Plumb Alignment',
+          desc: 'Integrated transparent silicone acoustic gaskets providing acoustic isolation while preserving aesthetic transparency.'
+        }
+      ],
+      spec1: {
+        icon: ShieldCheck,
+        label: 'Safety Standard',
+        value: '10mm / 12mm IS 2553 Toughened Safety Glass'
+      },
+      spec2: {
+        icon: Grid,
+        label: 'Acoustic Profile',
+        value: 'Acoustic Gasketed • Concealed Profile Channels'
+      }
+    },
+    {
+      id: 'shower-cubicles',
+      tabTitle: 'Shower Cubicles',
+      tabIcon: ShieldCheck,
+      tag: 'Luxury Bathrooms',
+      category: 'Frameless Shower Enclosures',
+      titlePrefix: 'Custom Designed Luxury Frameless &',
+      titleGradient: 'Fluted Shower Cubicles',
+      eyebrow: 'BATHROOM ARCHITECTURE • SS 304 STAINLESS HARDWARE',
+      image: siteImages.showerEnclosures,
+      shortDesc: 'Transform bathrooms into spa-grade private sanctuaries. We custom fabricate frameless walk-in glass shower enclosures, sliding shower cabins, and reeded fluted privacy glass enclosures tailored to your bathroom geometry in Kolkata.',
+      features: [
+        {
+          title: 'Crystal Clear & Fluted Designer Glass Options',
+          desc: 'Choice of Saint-Gobain UltraClear, frosted privacy bands, or trendy reeded fluted textured glass for modern elegance.'
+        },
+        {
+          title: 'Anti-Calcification Hydrophobic Shield Protection',
+          desc: 'Factory nano-coating repels hard water minerals, soap scum, and moisture stains for effortless cleaning and permanent sparkle.'
+        },
+        {
+          title: 'Marine Grade SS 304 Solid Stainless Steel Fittings',
+          desc: 'Rust-proof, moisture-sealed hydraulic hinges, reinforcement header bars, magnetic door seals, and designer handles in matte black or brushed gold.'
+        }
+      ],
+      spec1: {
+        icon: ShieldCheck,
+        label: 'Glass Specification',
+        value: '10mm Clear / Fluted Tempered Safety Glass'
+      },
+      spec2: {
+        icon: Award,
+        label: 'Hardware Grade',
+        value: 'Solid SS 304 Stainless Steel • 100% Rust-Proof'
+      }
+    },
+    {
+      id: 'hardware',
+      tabTitle: 'Architectural Hardware',
+      tabIcon: Cpu,
+      tag: 'Engineered Precision',
+      category: 'Glazing Hardware & Silicon',
+      titlePrefix: 'Heavy-Duty Tested Stainless Steel',
+      titleGradient: 'Architectural Hardware Systems',
+      eyebrow: 'HARDWARE & STRUCTURAL SILICON • CERTIFIED ENDURANCE',
+      image: siteImages.architecturalHardware,
+      shortDesc: 'The backbone of enduring glass installations. Premiere Enterprise supplies and installs certified architectural hardware — from heavy-duty hydraulic floor springs and patch fittings to spider connectors and neutral-cure structural glazing silicones.',
+      features: [
+        {
+          title: 'Heavy-Duty Hydraulic Double-Action Floor Springs',
+          desc: 'Engineered to support glass door leaves up to 150 kg with dual closing speed control and smooth 90° hold-open functionality.'
+        },
+        {
+          title: 'SS 304 & SS 316 Patch Fittings & Spider Brackets',
+          desc: 'Precision CNC-machined architectural fittings tested for 500,000+ cycle fatigue resistance under high wind loads.'
+        },
+        {
+          title: 'Non-Staining Neutral Structural Glazing Silicones',
+          desc: 'High-modulus weatherproof sealants and anti-fungal sanitary silicones that never discolor or damage mirror silver backings.'
+        }
+      ],
+      spec1: {
+        icon: Cpu,
+        label: 'Load Capacity',
+        value: 'Up to 150 kg Door Leaf • 500k Cycle Tested'
+      },
+      spec2: {
+        icon: Award,
+        label: 'Material Grade',
+        value: 'Grade SS 304 / SS 316 Stainless Steel'
       }
     }
   ];

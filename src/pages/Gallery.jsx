@@ -13,7 +13,7 @@ export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [lightboxState, setLightboxState] = useState({ isOpen: false, item: null, index: 0 });
 
-  const categories = ['All', 'Mirror', 'Mirror Wall Panels', 'Glass', 'Glass Doors', 'Toughened Glass Partitions', 'Workshop'];
+  const categories = ['All', 'Mirror', 'Mirror Wall Panels', 'Glass', 'Toughened Glass Partitions', 'Shower Cubicles', 'Architectural Hardware', 'Glass Doors', 'Workshop'];
 
   const filteredItems = activeCategory === 'All'
     ? siteData.gallery
@@ -102,7 +102,7 @@ export default function Gallery() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                        className={`w-full h-full object-cover ${item.objectPosition || 'object-center'} group-hover:scale-108 transition-transform duration-700 ease-out`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-85 group-hover:opacity-60 transition-opacity" />
 

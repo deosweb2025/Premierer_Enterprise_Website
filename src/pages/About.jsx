@@ -9,7 +9,7 @@ import {
   CheckCircle2,
   Award
 } from 'lucide-react';
-import { siteData } from '../data/siteData';
+import { siteData, siteImages } from '../data/siteData';
 import PageHeader from '../components/common/PageHeader';
 import SectionHeading from '../components/common/SectionHeading';
 import ImageLightbox from '../components/common/ImageLightbox';
@@ -22,10 +22,47 @@ export default function About() {
 
   const aboutShowcaseImages = [
     {
+      id: "part-1",
+      title: "Frameless Toughened Glass Architectural Partitions",
+      category: "Partitions",
+      image: siteImages.toughenedPartitions,
+      objectPosition: "object-center",
+      description: "Ultra-luxury acoustic frameless 10mm/12mm toughened glass divider walls engineered for commercial offices, boardrooms, and modern residences.",
+      specs: "10mm–12mm Toughened Safety Glass • Concealed Glazing Channels • Acoustic Seals"
+    },
+    {
+      id: "shower-1",
+      title: "Luxury Bespoke Walk-In Shower Cubicles",
+      category: "Shower Cubicles",
+      image: siteImages.showerCubicles,
+      objectPosition: "object-center",
+      description: "Designer frameless and fluted glass shower enclosures fabricated with moisture-resistant SS 304 hardware and hydrophobic nano-shield protection.",
+      specs: "10mm Crystal Clear & Fluted Glass • Matte Black SS 304 • Anti-Stain Nano-Coat"
+    },
+    {
+      id: "shower-2",
+      title: "Fluted Architectural Glass Shower Enclosure",
+      category: "Shower Enclosure",
+      image: siteImages.showerEnclosures,
+      objectPosition: "object-center",
+      description: "Contemporary luxury walk-in shower cabin crafted with vertical fluted privacy glass, matte black architectural hardware, and precision water seals.",
+      specs: "10mm Reeded Fluted Glass • Matte Black SS 304 • Acoustic Water Seals"
+    },
+    {
+      id: "hard-1",
+      title: "High-Precision Architectural Hardware Systems",
+      category: "Hardware",
+      image: siteImages.architecturalHardware,
+      objectPosition: "object-center",
+      description: "Heavy-duty SS 304 patch fittings, hydraulic floor springs, spider connectors, glass clamps, and structural glazing silicones for seamless fitments.",
+      specs: "SS 304 & SS 316 Architectural Grade • Heavy-Duty Hydraulic Floor Springs • Load Tested"
+    },
+    {
       id: 10,
       title: "Premiere Enterprise Showroom & Workshop Storefront",
       category: "Kolkata Facility",
       image: siteData.company.storefrontImage, // pic11
+      objectPosition: "object-top", // Ensures the full signboard banner is completely visible
       description: "Street-level entrance of Premiere Enterprise at 2/16, K. Bose Sarani, Kolkata - 700080, featuring sliding glass frontage and walk-in consultation desk.",
       specs: "2/16, K. Bose Sarani, Kolkata - 700080 • Direct Walk-Ins Welcome"
     },
@@ -34,6 +71,7 @@ export default function About() {
       title: "In-House Glass Cutting & Fabrication Floor",
       category: "Fabrication Unit",
       image: siteData.company.workshopImage, // pic12
+      objectPosition: "object-center",
       description: "Our active Kolkata fabrication facility equipped with heavy-duty glass cutting table, float glass slabs, mirror inventory, and UPVC assemblies.",
       specs: "Precision Workbench • Float Glass Stocks • In-House Fabrication"
     },
@@ -42,6 +80,7 @@ export default function About() {
       title: "Premiere Enterprise Showroom Display",
       category: "Showroom",
       image: siteData.gallery[5].image, // pic6
+      objectPosition: "object-center",
       description: "Our dedicated showroom showcasing full-height LED backlit mirrors, diamond bevelled mirror partition walls, and bespoke artistic mirrors in Kolkata.",
       specs: "Floor-to-Ceiling Mirrors • Dual CCT LED Touch • Custom Bevelled Panelling"
     },
@@ -50,6 +89,7 @@ export default function About() {
       title: "Official Facility Signage & Registered GSTIN",
       category: "Facility Signage",
       image: siteData.company.signboardImage, // pic10
+      objectPosition: "object-center",
       description: "Official facility signboard verifying our comprehensive service scope across architectural glass, mirrors, partitions, UPVC, aluminium, and epoxy.",
       specs: "Verified GSTIN: 19AJFPP0751P1ZO • spells quality • 10+ Years Craft"
     }
@@ -143,31 +183,34 @@ export default function About() {
                 <img
                   src={currentShowcase.image}
                   alt={currentShowcase.title}
-                  className="w-full h-[380px] sm:h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  className={`w-full h-[430px] sm:h-[490px] lg:h-[520px] object-cover ${currentShowcase.objectPosition || 'object-top'} group-hover:scale-102 transition-transform duration-700`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                {/* Vignette focused on bottom card so the top banner remains crystal clear */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent pointer-events-none" />
 
-                <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-amber-400/40 text-xs font-bold text-amber-300">
-                  {currentShowcase.category}
-                </div>
-
-                <div className="absolute top-4 right-4 p-2 rounded-full bg-slate-950/80 text-white border border-white/20 group-hover:bg-amber-500/40 transition-colors">
-                  <Eye className="w-4 h-4 text-amber-300" />
-                </div>
-
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-950/90 backdrop-blur-md border border-white/10">
-                  <h4 className="text-sm font-bold text-white">{currentShowcase.title}</h4>
+                {/* Bottom Card: Caption & Details (No top badges blocking the banner) */}
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-950/90 backdrop-blur-md border border-white/10 shadow-2xl">
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="px-2.5 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-[11px] font-bold text-amber-300">
+                      {currentShowcase.category}
+                    </span>
+                    <span className="text-[11px] text-slate-300 font-medium flex items-center gap-1.5 group-hover:text-amber-300 transition-colors">
+                      <Eye className="w-3.5 h-3.5 text-amber-400" />
+                      <span>View Full Image</span>
+                    </span>
+                  </div>
+                  <h4 className="text-sm sm:text-base font-bold text-white leading-snug">{currentShowcase.title}</h4>
                   <p className="text-xs text-slate-300 mt-1 line-clamp-2">
                     {currentShowcase.description}
                   </p>
-                  <span className="text-[11px] text-amber-400 font-mono mt-1.5 block">
+                  <span className="text-[11px] text-amber-400 font-mono mt-1.5 block truncate">
                     {currentShowcase.specs}
                   </span>
                 </div>
               </div>
 
-              {/* 4 Interactive Thumbnails */}
-              <div className="grid grid-cols-4 gap-2.5">
+              {/* Interactive Showcase Thumbnails */}
+              <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
                 {aboutShowcaseImages.map((thumb, idx) => (
                   <button
                     key={thumb.id}
@@ -181,7 +224,7 @@ export default function About() {
                     <img
                       src={thumb.image}
                       alt={thumb.title}
-                      className="w-full h-full object-cover"
+                      className={`w-full h-full object-cover ${thumb.objectPosition || 'object-top'}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent" />
                     <span className="absolute bottom-1 inset-x-1 text-[9px] font-bold text-white text-center truncate">

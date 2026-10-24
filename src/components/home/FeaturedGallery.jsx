@@ -17,14 +17,25 @@ export default function FeaturedGallery() {
 
   const filterCategories = [
     { label: 'All Showcases', key: 'All' },
+    { label: 'Toughened Partitions', key: 'Toughened Glass Partitions' },
+    { label: 'Shower Cubicles', key: 'Shower Cubicles' },
+    { label: 'Hardware', key: 'Architectural Hardware' },
     { label: 'Smart LED Mirrors', key: 'Mirror' },
     { label: 'Bevelled Mirror Walls', key: 'Mirror Wall Panels' },
     { label: 'Architectural Glass', key: 'Glass' },
     { label: 'Kolkata Workshop', key: 'Workshop' }
   ];
 
+  // Curated 6 featured installations for the Home page Gallery section
+  // (Replaces redundant mirror photos with Luxury Toughened Glass Partitions & Luxury Bespoke Shower Cubicles from Screenshot 2)
+  const homeFeaturedGalleryIds = [1, 5, 3, 4, 14, 15];
+
   const getFilteredItems = () => {
-    if (activeCategory === 'All') return siteData.gallery;
+    if (activeCategory === 'All') {
+      return homeFeaturedGalleryIds
+        .map(id => siteData.gallery.find(item => item.id === id))
+        .filter(Boolean);
+    }
     return siteData.gallery.filter(item => 
       item.category.toLowerCase().includes(activeCategory.toLowerCase())
     );
@@ -89,7 +100,7 @@ export default function FeaturedGallery() {
             {filterCategories.map((cat) => {
               const isActive = activeCategory === cat.key;
               const count = cat.key === 'All' 
-                ? siteData.gallery.length 
+                ? homeFeaturedGalleryIds.length 
                 : siteData.gallery.filter(i => i.category.toLowerCase().includes(cat.key.toLowerCase())).length;
 
               return (
@@ -153,7 +164,7 @@ export default function FeaturedGallery() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 ease-out"
+                    className={`absolute inset-0 w-full h-full object-cover ${item.objectPosition || 'object-center'} group-hover:scale-108 transition-transform duration-700 ease-out`}
                   />
                   
                   {/* Cinematic Bottom & Corner Vignette */}

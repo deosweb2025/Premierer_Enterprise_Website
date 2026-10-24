@@ -11,7 +11,10 @@ import {
   CheckCircle2,
   Maximize2,
   Award,
-  Sparkles
+  Sparkles,
+  ShieldCheck,
+  Layers,
+  Cpu
 } from 'lucide-react';
 import { siteData } from '../data/siteData';
 import PageHeader from '../components/common/PageHeader';
@@ -22,11 +25,15 @@ import headerServices from '../assets/images/header-services.jpg';
 export default function Services() {
   const iconMap = {
     Scissors: Scissors,
+    Grid: Grid,
+    ShieldCheck: ShieldCheck,
+    Layers: Layers,
+    Cpu: Cpu,
+    CheckCircle: CheckCircle,
     Flame: Flame,
     Palette: Palette,
-    Grid: Grid,
     Compass: Compass,
-    CheckCircle: CheckCircle
+    Sparkles: Sparkles
   };
 
   const workflowSteps = [

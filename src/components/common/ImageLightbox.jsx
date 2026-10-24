@@ -97,22 +97,22 @@ export default function ImageLightbox({
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.92, opacity: 0, y: 15 }}
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
-          className="relative max-w-5xl w-full max-h-[88vh] flex flex-col rounded-2xl overflow-hidden glass-panel border border-amber-500/30 shadow-[0_0_50px_rgba(245,158,11,0.2)]"
+          className="relative max-w-5xl w-full max-h-[92vh] flex flex-col rounded-2xl overflow-hidden glass-panel border border-amber-500/30 shadow-[0_0_50px_rgba(245,158,11,0.2)]"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Main Image Container */}
-          <div className="relative flex-1 min-h-[350px] sm:min-h-[460px] max-h-[68vh] bg-slate-950 flex items-center justify-center p-2 overflow-hidden">
+          {/* Main Image Container with full uncropped display */}
+          <div className="relative w-full h-[52vh] sm:h-[64vh] max-h-[64vh] bg-slate-950 flex items-center justify-center p-2 sm:p-4 overflow-hidden">
             <img
               src={currentImage.image}
               alt={currentImage.title}
-              className="max-h-full max-w-full object-contain rounded-lg shadow-2xl"
+              className="w-full h-full object-contain rounded-lg shadow-2xl"
             />
             {/* Subtle glass reflection highlight */}
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-amber-500/5 via-transparent to-yellow-500/5 opacity-50" />
           </div>
 
           {/* Image Details Caption Bar */}
-          <div className="p-4 sm:p-6 bg-slate-950/95 border-t border-white/10">
+          <div className="p-3 sm:p-5 bg-slate-950/95 border-t border-white/10 shrink-0">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide flex items-center gap-2 font-heading">

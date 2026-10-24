@@ -18,8 +18,18 @@ import pic11 from '../assets/images/pic11.jpeg';
 import pic12 from '../assets/images/pic12.jpeg';
 import pic14 from '../assets/images/pic14.jpeg';
 
+// Ultra-Luxury Category Showcase Imagery (Toughened Partitions, Shower Cubicles, Architectural Hardware)
+import toughenedPartitionsImg from '../assets/images/toughened-partitions-luxury.jpg';
+import showerCubiclesImg from '../assets/images/shower-cubicles-luxury.jpg';
+import showerEnclosuresImg from '../assets/images/category-shower-enclosures.jpg';
+import architecturalHardwareImg from '../assets/images/architectural-hardware-luxury.jpg';
+
 export const siteImages = {
   pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10, pic11, pic12, pic14,
+  toughenedPartitions: toughenedPartitionsImg,
+  showerCubicles: showerCubiclesImg,
+  showerEnclosures: showerEnclosuresImg,
+  architecturalHardware: architecturalHardwareImg,
   storefront: pic11,
   signboard: pic10,
   workshop: pic12,
@@ -79,9 +89,10 @@ export const siteData = {
   coreCapabilities: [
     { id: "glass", name: "Glass", desc: "Toughened, Fluted, Tinted & Laminated Architectural Glass" },
     { id: "mirror", name: "Mirror", desc: "Designer Smart LED Backlit, Copper-Free HD Vanity & Decorative Mirrors" },
+    { id: "partitions", name: "Toughened Glass Partitions", desc: "Frameless 10mm/12mm Office & Residential Glass Divider Walls" },
+    { id: "shower-cubicles", name: "Shower Cubicles", desc: "Luxury Frameless & Fluted Glass Walk-In Shower Enclosures" },
     { id: "hardware", name: "Architectural Hardware", desc: "Premium Patch Fittings, Floor Springs, Handles & Spider Connectors" },
     { id: "silicon", name: "Silicon", desc: "High-Performance Structural Glazing Silicon & Weatherproof Sealants" },
-    { id: "partitions", name: "Toughened Glass Partitions", desc: "Frameless 10mm/12mm Office & Residential Glass Divider Walls" },
     { id: "doors", name: "Glass Doors", desc: "Frameless Pivot, Sliding, Sensor & Patch-Fitting Glass Doors" },
     { id: "mirror-panels", name: "Mirror Wall Panels", desc: "Custom Diamond Bevelled & Geometric Chevron Mirror Accent Walls" },
     { id: "upvc", name: "UPVC", desc: "Soundproof, High-Durability UPVC Window & Door Systems" },
@@ -146,7 +157,7 @@ export const siteData = {
       title: "Toughened Glass Partitions",
       category: "Toughened Glass Partitions",
       tag: "Architectural Grade",
-      image: pic6,
+      image: toughenedPartitionsImg,
       shortDesc: "Heavy-duty structural safety glass partitions providing clear acoustic separation, modern elegance, and maximum light distribution for office suites and residences.",
       features: [
         "10mm & 12mm High-Grade Toughened Safety Glass",
@@ -155,8 +166,25 @@ export const siteData = {
         "Zero Optical Distortion Float Substrates",
         "Precision Cutouts for Floor Springs and Patch Fittings"
       ],
-      suitableFor: "Corporate Offices, Conference Rooms, Luxury Shower Partitions, Balustrades",
+      suitableFor: "Corporate Offices, Conference Rooms, Luxury Living Dividers, Penthouse Suites",
       thickness: "10mm, 12mm & 15mm Toughened Glass"
+    },
+    {
+      id: "shower-cubicles",
+      title: "Bespoke Glass Shower Cubicles",
+      category: "Shower Cubicles",
+      tag: "Luxury Wet Rooms",
+      image: showerCubiclesImg,
+      shortDesc: "Custom-built frameless and fluted glass shower enclosures engineered with anti-calcification nano-coating and Grade SS 304 anti-corrosion hardware.",
+      features: [
+        "10mm & 12mm High-Clarity Toughened Safety Glass",
+        "Clear, Fluted Reeded & Frosted Privacy Glass Finishes",
+        "Heavy-Duty SS 304 Hinges, Wall Connectors & Stabilizer Bars",
+        "Magnetic Water-Tight Door Seals & Slim Threshold Profiles",
+        "Permanent Nano Hydrophobic Anti-Limescale Coating"
+      ],
+      suitableFor: "Master Bathrooms, Luxury En-suites, Penthouse Bathrooms, Five-Star Hotels",
+      thickness: "10mm & 12mm Toughened Safety Glass"
     },
     {
       id: "glass-doors",
@@ -248,7 +276,7 @@ export const siteData = {
       title: "Architectural Hardware & Silicon Solutions",
       category: "Architectural Hardware",
       tag: "Essential Infrastructure",
-      image: pic6,
+      image: architecturalHardwareImg,
       shortDesc: "Top-tier structural glazing silicones, anti-fungal sanitary sealants, and stainless steel hardware engineered for enduring structural integrity.",
       features: [
         "SS 304 & SS 316 Grade Patch Fittings & Hinges",
@@ -311,13 +339,24 @@ export const siteData = {
     },
     {
       id: "toughened-partitions-doors",
-      title: "Toughened Partitions & Glass Doors",
-      desc: "Turnkey fabrication and installation of frameless toughened glass partitions, conference room walls, and pivot glass doors.",
+      title: "Toughened Glass Partitions",
+      desc: "Turnkey fabrication and installation of frameless toughened glass partitions, conference room dividers, and acoustic glass walls.",
       icon: "Grid",
       points: [
         "10mm & 12mm certified safety toughened glass",
         "Concealed patch fittings & hydraulic floor springs",
         "Acoustic sealing and soft-close sliding systems"
+      ]
+    },
+    {
+      id: "shower-cubicles-enclosures",
+      title: "Bespoke Shower Cubicles",
+      desc: "Architectural frameless and fluted walk-in shower enclosures engineered with anti-calcification nano-shields and SS 304 fittings.",
+      icon: "ShieldCheck",
+      points: [
+        "10mm & 12mm high-clarity safety toughened glass",
+        "Clear, frosted, and reeded fluted architectural textures",
+        "Grade SS 304 moisture-proof hinges, handles & stabilizer bars"
       ]
     },
     {
@@ -362,6 +401,28 @@ export const siteData = {
         "Surface mechanical grinding and moisture testing",
         "Self-levelling high-strength epoxy resin coats",
         "UV-stable polyurethane protective topcoats"
+      ]
+    },
+    {
+      id: "glass-doors-entrances",
+      title: "Frameless Glass Doors & Entrances",
+      desc: "Turnkey fabrication and installation of architectural frameless glass pivot doors, sliding entrances, sensor automated doors, and acoustic patch entries.",
+      icon: "Compass",
+      points: [
+        "10mm & 12mm certified safety toughened glass",
+        "Heavy-duty double-action hydraulic floor springs & patch locks",
+        "Sleek tubular SS 304 pull handles & overhead sliding tracks"
+      ]
+    },
+    {
+      id: "smart-led-vanity-mirrors",
+      title: "Designer Smart LED Mirrors",
+      desc: "Bespoke fabrication of luxury smart LED backlit mirrors with capacitive feather-touch dimming, dual CCT color temperatures, and automated demister pads.",
+      icon: "Sparkles",
+      points: [
+        "Capacitive feather-touch sensors with stepless brightness control",
+        "Dual 3000K warm ambient & 6500K crisp daylight LED modes",
+        "Built-in heating demister pad preventing steam & condensation"
       ]
     }
   ],
@@ -411,7 +472,7 @@ export const siteData = {
     {
       id: 6,
       title: "Full-Length Backlit Floor Mirror & Diamond Wall",
-      category: "Toughened Glass Partitions",
+      category: "Mirror Wall Panels",
       image: pic6,
       description: "Wide angle showroom perspective showing full-length illuminated vanity mirror alongside diamond grid bevelled wall and architectural partitions.",
       specs: "Floor-to-Ceiling Height | Custom Architectural Bevels | Dual Sensor Touch"
@@ -445,6 +506,7 @@ export const siteData = {
       title: "Showroom & Fabrication Workshop Storefront",
       category: "Workshop",
       image: pic11,
+      objectPosition: "object-top",
       description: "Street-level entrance of our official facility at 2/16, K. Bose Sarani, Kolkata, showcasing our sliding glass frontage, consultation desk, and glass stock bays.",
       specs: "2/16 K. Bose Sarani, Kolkata - 700080 | Direct Walk-Ins Welcome | In-House Facility"
     },
@@ -471,6 +533,38 @@ export const siteData = {
       image: pic10,
       description: "Official exterior facility signboard highlighting verified service scope (Glass, Mirrors, Partitions, UPVC, Aluminium, Epoxy) and active GSTIN registration.",
       specs: "Verified GSTIN: 19AJFPP0751P1ZO | 10+ Years Craft | spells quality"
+    },
+    {
+      id: 14,
+      title: "Frameless Toughened Glass Partitions",
+      category: "Toughened Glass Partitions",
+      image: toughenedPartitionsImg,
+      description: "Ultra-luxury acoustic frameless toughened glass partition walls engineered with floor-to-ceiling safety glass, minimal profile channels, and concealed pivot fittings.",
+      specs: "10mm / 12mm Toughened Safety Glass | Concealed Pivot Hardware | Acoustic Seals"
+    },
+    {
+      id: 15,
+      title: "Luxury Bespoke Frameless Shower Cubicles",
+      category: "Shower Cubicles",
+      image: showerCubiclesImg,
+      description: "Designer master bathroom walk-in shower enclosure featuring 10mm crystal clear and fluted toughened glass with matte black SS 304 architectural fittings.",
+      specs: "10mm Crystal Clear & Fluted Glass | Matte Black SS 304 Hardware | Hydrophobic Nano-Coating"
+    },
+    {
+      id: 16,
+      title: "High-Precision Architectural Hardware Systems",
+      category: "Architectural Hardware",
+      image: architecturalHardwareImg,
+      description: "Heavy-duty SS 304 and matte black architectural patch fittings, hydraulic floor springs, precision glass hinges, and spider connectors for glass installations.",
+      specs: "Grade SS 304 & SS 316 Hardware | Heavy-Duty Hydraulic Floor Springs | Certified Load-Bearing"
+    },
+    {
+      id: 17,
+      title: "Designer Fluted Glass Shower Enclosure",
+      category: "Shower Cubicles",
+      image: showerEnclosuresImg,
+      description: "Contemporary luxury walk-in shower cabin crafted with vertical fluted privacy glass, matte black architectural hardware, and precision water seals.",
+      specs: "10mm Reeded Fluted Safety Glass | Matte Black SS 304 Fittings | Hydrophobic Nano-Shield"
     }
   ],
 

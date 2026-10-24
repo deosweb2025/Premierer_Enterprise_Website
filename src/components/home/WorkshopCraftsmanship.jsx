@@ -24,6 +24,7 @@ export default function WorkshopCraftsmanship() {
       category: "Kolkata Facility",
       tag: "Walk-In Studio",
       image: siteData.gallery[9].image, // pic11
+      objectPosition: "object-top",
       description: "Street-level entrance of Premiere Enterprise at 2/16, K. Bose Sarani, Kolkata - 700080 with sliding glass frontage and consultation desk.",
       specs: "2/16 K. Bose Sarani • Direct Walk-Ins • Active Fabrication"
     },
@@ -115,7 +116,7 @@ export default function WorkshopCraftsmanship() {
                     <img
                       src={imgItem.image}
                       alt={imgItem.title}
-                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                      className={`w-full h-full object-cover ${imgItem.objectPosition || 'object-center'} group-hover:scale-108 transition-transform duration-700 ease-out`}
                     />
                     {/* Vignette Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0d121f]/95 via-[#0d121f]/30 to-transparent pointer-events-none" />

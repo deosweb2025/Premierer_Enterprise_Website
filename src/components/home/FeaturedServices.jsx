@@ -18,11 +18,24 @@ export default function FeaturedServices() {
   const iconMap = {
     Scissors: Scissors,
     Grid: Grid,
+    ShieldCheck: ShieldCheck,
     Layers: Layers,
     Cpu: Cpu,
-    CheckCircle: ShieldCheck,
+    CheckCircle: CheckCircle2,
     Flame: Flame
   };
+
+  // Only display the 6 core architectural services on the Home Page
+  // (Excluding Epoxy Flooring and additional service cards per client request - those remain on the Services page)
+  const homeServiceIds = [
+    'custom-glass-cutting',
+    'toughened-partitions-doors',
+    'shower-cubicles-enclosures',
+    'mirror-wall-installation',
+    'upvc-aluminium-systems',
+    'hardware-silicon-supply'
+  ];
+  const homeServices = siteData.services.filter(service => homeServiceIds.includes(service.id));
 
   return (
     <section className="py-24 sm:py-28 bg-gradient-to-b from-[#0f1422] via-[#131929] to-[#101524] relative overflow-hidden border-t border-white/10">
@@ -51,7 +64,7 @@ export default function FeaturedServices() {
 
         {/* Services Grid with Animated Glass Edge Border Beam */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {siteData.services.map((service, idx) => {
+          {homeServices.map((service, idx) => {
             const IconComponent = iconMap[service.icon] || ShieldCheck;
 
             return (

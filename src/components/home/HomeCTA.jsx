@@ -98,10 +98,11 @@ export default function HomeCTA() {
                   {/* Direct Phone Call Button */}
                   <a
                     href={`tel:${phoneClean}`}
-                    className="px-5 py-4 rounded-xl text-sm font-semibold bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white border border-white/10 hover:border-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                    title={`Call ${siteData.contact.phoneDisplay}`}
+                    className="px-6 py-4 rounded-xl text-sm font-semibold bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white border border-white/10 hover:border-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2.5 cursor-pointer shadow-sm"
                   >
                     <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span>{siteData.contact.phone}</span>
+                    <span>Call Now</span>
                   </a>
                 </div>
 
