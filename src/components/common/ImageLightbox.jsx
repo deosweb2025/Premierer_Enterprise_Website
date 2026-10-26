@@ -100,13 +100,24 @@ export default function ImageLightbox({
           className="relative max-w-5xl w-full max-h-[92vh] flex flex-col rounded-2xl overflow-hidden glass-panel border border-amber-500/30 shadow-[0_0_50px_rgba(245,158,11,0.2)]"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Main Image Container with full uncropped display */}
+          {/* Main Media Container with full uncropped display */}
           <div className="relative w-full h-[52vh] sm:h-[64vh] max-h-[64vh] bg-slate-950 flex items-center justify-center p-2 sm:p-4 overflow-hidden">
-            <img
-              src={currentImage.image}
-              alt={currentImage.title}
-              className="w-full h-full object-contain rounded-lg shadow-2xl"
-            />
+            {currentImage.isVideo || currentImage.video ? (
+              <video
+                key={currentImage.video || currentImage.image}
+                src={currentImage.video || currentImage.image}
+                controls
+                autoPlay
+                playsInline
+                className="w-full h-full object-contain rounded-lg shadow-2xl bg-black"
+              />
+            ) : (
+              <img
+                src={currentImage.image}
+                alt={currentImage.title}
+                className="w-full h-full object-contain rounded-lg shadow-2xl"
+              />
+            )}
             {/* Subtle glass reflection highlight */}
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-amber-500/5 via-transparent to-yellow-500/5 opacity-50" />
           </div>

@@ -7,7 +7,10 @@ import {
   Gem,
   ScanLine,
   CheckCircle2,
-  Award
+  Award,
+  Users,
+  Wrench,
+  Clock
 } from 'lucide-react';
 import { siteData, siteImages } from '../data/siteData';
 import PageHeader from '../components/common/PageHeader';
@@ -32,21 +35,21 @@ export default function About() {
     },
     {
       id: "shower-1",
-      title: "Luxury Bespoke Walk-In Shower Cubicles",
+      title: "Luxury Bespoke Frameless Shower Cubicles",
       category: "Shower Cubicles",
       image: siteImages.showerCubicles,
       objectPosition: "object-center",
-      description: "Designer frameless and fluted glass shower enclosures fabricated with moisture-resistant SS 304 hardware and hydrophobic nano-shield protection.",
-      specs: "10mm Crystal Clear & Fluted Glass • Matte Black SS 304 • Anti-Stain Nano-Coat"
+      description: "Ultra-luxury 100% frameless walk-in shower enclosures engineered with 10mm crystal-clear toughened safety glass, minimal SS 304 hinges, and hydrophobic nano-shield protection.",
+      specs: "10mm Crystal Clear Safety Glass • Minimalist SS 304 Hinges • Nano Hydrophobic Shield"
     },
     {
       id: "shower-2",
-      title: "Fluted Architectural Glass Shower Enclosure",
+      title: "Frameless Walk-In Glass Shower Architecture",
       category: "Shower Enclosure",
       image: siteImages.showerEnclosures,
       objectPosition: "object-center",
-      description: "Contemporary luxury walk-in shower cabin crafted with vertical fluted privacy glass, matte black architectural hardware, and precision water seals.",
-      specs: "10mm Reeded Fluted Glass • Matte Black SS 304 • Acoustic Water Seals"
+      description: "Contemporary curbless frameless shower cabin with zero visual barriers, concealed floor drainage, and premium stainless steel wall clamps.",
+      specs: "Frameless Clear Tempered Glass • Zero Threshold Walk-In • SS 304 Clamps"
     },
     {
       id: "hard-1",
@@ -54,8 +57,8 @@ export default function About() {
       category: "Hardware",
       image: siteImages.architecturalHardware,
       objectPosition: "object-center",
-      description: "Heavy-duty SS 304 patch fittings, hydraulic floor springs, spider connectors, glass clamps, and structural glazing silicones for seamless fitments.",
-      specs: "SS 304 & SS 316 Architectural Grade • Heavy-Duty Hydraulic Floor Springs • Load Tested"
+      description: "Grade SS 304 patch fittings, heavy-duty hydraulic floor springs, spider brackets, glass door handles, and structural glazing silicones displayed in our showroom.",
+      specs: "Grade SS 304 / SS 316 Stainless Steel • Hydraulic Floor Springs • 500k Cycle Tested"
     },
     {
       id: 10,
@@ -256,8 +259,12 @@ export default function About() {
                 By investing in high-precision edge-beveling machinery, diamond grinding belts, and computerized scoring tables, we maintain complete end-to-end quality control from raw float sheets to final turnkey installations.
               </p>
 
+              <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                What truly powers our consistent execution is our <span className="text-amber-300 font-semibold">highly skilled personnel and robust manpower</span>. With a large in-house team of seasoned glass craftsmen, CNC fabricators, structural glazing specialists, and certified on-site installers, we have the capacity to handle large commercial and luxury residential projects smoothly — delivering with zero bottlenecks, rapid turnarounds, and flawless precision.
+              </p>
+
               {/* Core Pillars Grid */}
-              <div className="mt-8 grid grid-cols-2 gap-4">
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl glass-panel border border-white/5 bg-slate-950/60">
                   <ShieldCheck className="w-6 h-6 text-amber-400 mb-2" />
                   <h4 className="text-sm font-bold text-white">Copper-Free HD Mirrors</h4>
@@ -273,10 +280,83 @@ export default function About() {
                     Warm 3000K & Daylight 6500K LEDs with feather-touch dimming and defoggers.
                   </p>
                 </div>
+
+                <div className="p-4 rounded-xl glass-panel border border-amber-400/20 bg-slate-950/60">
+                  <Users className="w-6 h-6 text-amber-400 mb-2" />
+                  <h4 className="text-sm font-bold text-white">Skilled In-House Craftsmen</h4>
+                  <p className="text-xs text-slate-400 mt-1">
+                    Trained technicians handling precision 0.2mm scoring, beveling, and bespoke fabrication.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl glass-panel border border-amber-400/20 bg-slate-950/60">
+                  <Clock className="w-6 h-6 text-yellow-400 mb-2" />
+                  <h4 className="text-sm font-bold text-white">Ample Manpower for Smooth Work</h4>
+                  <p className="text-xs text-slate-400 mt-1">
+                    Substantial workforce capacity to manage multiple on-site and workshop projects without delays.
+                  </p>
+                </div>
               </div>
 
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5. Skilled Personnel & Manpower Strength Section */}
+      <section className="py-20 sm:py-24 bg-gradient-to-b from-[#0f1422] via-[#131929] to-[#07090e] border-b border-white/5 relative overflow-hidden">
+        {/* Ambient lighting orb */}
+        <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[350px] bg-amber-500/[0.06] rounded-full blur-[160px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <SectionHeading
+            badge="Workforce Capacity & Execution Mastery"
+            title="Powered by Skilled Artisans &"
+            gradientTitle="Ample Manpower"
+            subtitle="Equipped with seasoned glass craftsmen, certified on-site technicians, and adequate manpower to execute projects smoothly without delays or bottlenecks."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-6 rounded-2xl glass-panel border border-amber-400/20 bg-slate-900/60 hover:border-amber-400/40 hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-400/30 text-amber-300 flex items-center justify-center mb-4 shadow-sm">
+                <Users className="w-6 h-6" />
+              </div>
+              <h4 className="text-base font-bold text-white mb-2">Master Glass Technicians</h4>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Experienced in-house craftsmen with over a decade of expertise in precision glass cutting, 0.2mm tolerance edge-beveling, and structural fitments.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl glass-panel border border-amber-400/20 bg-slate-900/60 hover:border-amber-400/40 hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-400/30 text-amber-300 flex items-center justify-center mb-4 shadow-sm">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h4 className="text-base font-bold text-white mb-2">Ample Manpower Capacity</h4>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Substantial workforce capacity to manage multiple commercial floor partitions, hotel fitments, and luxury residential orders simultaneously.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl glass-panel border border-amber-400/20 bg-slate-900/60 hover:border-amber-400/40 hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-400/30 text-amber-300 flex items-center justify-center mb-4 shadow-sm">
+                <Clock className="w-6 h-6" />
+              </div>
+              <h4 className="text-base font-bold text-white mb-2">Smooth, On-Time Delivery</h4>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Streamlined workflow coordination from initial laser site surveys to workshop fabrication and safe transport guarantees zero project delays.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl glass-panel border border-amber-400/20 bg-slate-900/60 hover:border-amber-400/40 hover:-translate-y-1 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-400/30 text-amber-300 flex items-center justify-center mb-4 shadow-sm">
+                <Wrench className="w-6 h-6" />
+              </div>
+              <h4 className="text-base font-bold text-white mb-2">Turnkey On-Site Fitment</h4>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Certified on-site glazing crews equipped with laser alignment tools and heavy-duty suction lifters ensure millimetric plumb fit and clean finish.
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -44,6 +44,10 @@ export default function GlassShowcase() {
           desc: 'Over a decade of specialized craft excellence with 500+ landmark residential and commercial installations across West Bengal.'
         },
         {
+          title: 'Highly Skilled Personnel & Robust Manpower',
+          desc: 'Seasoned glass craftsmen, CNC fabricators, and certified on-site installers ensuring smooth execution with zero bottlenecks.'
+        },
+        {
           title: 'Authentic Walk-In Consultation Studio',
           desc: 'Visit our studio at 2/16 K. Bose Sarani to inspect tactile glass cutouts, bevel angle samples, and illuminated LED mockups in person.'
         },
@@ -212,12 +216,12 @@ export default function GlassShowcase() {
       tabTitle: 'Shower Cubicles',
       tabIcon: ShieldCheck,
       tag: 'Luxury Bathrooms',
-      category: 'Frameless Shower Enclosures',
-      titlePrefix: 'Custom Designed Luxury Frameless &',
-      titleGradient: 'Fluted Shower Cubicles',
+      category: 'Frameless Shower Cubicles',
+      titlePrefix: 'Custom Designed Luxury High-Clarity',
+      titleGradient: 'Frameless Shower Cubicles',
       eyebrow: 'BATHROOM ARCHITECTURE • SS 304 STAINLESS HARDWARE',
-      image: siteImages.showerEnclosures,
-      shortDesc: 'Transform bathrooms into spa-grade private sanctuaries. We custom fabricate frameless walk-in glass shower enclosures, sliding shower cabins, and reeded fluted privacy glass enclosures tailored to your bathroom geometry in Kolkata.',
+      image: siteImages.showerCubicles,
+      shortDesc: 'Transform bathrooms into spa-grade private sanctuaries. We custom fabricate 100% frameless walk-in glass shower enclosures and minimalist pivot shower cabins tailored to your bathroom geometry in Kolkata.',
       features: [
         {
           title: 'Crystal Clear & Fluted Designer Glass Options',
@@ -298,7 +302,7 @@ export default function GlassShowcase() {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-gradient-to-b from-[#090d16] via-[#101726] to-[#0a0e17] relative overflow-hidden">
+    <section id="about" className="py-20 sm:py-28 bg-gradient-to-b from-[#090d16] via-[#101726] to-[#0a0e17] relative overflow-hidden">
       {/* Top & Bottom Specular Bevel Hairlines */}
       <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400/50 to-transparent shadow-[0_1px_15px_rgba(245,158,11,0.35)]" />
       <div className="absolute bottom-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400/30 to-transparent" />
@@ -325,6 +329,31 @@ export default function GlassShowcase() {
           gradientTitle="10+ Years of Craftsmanship"
           subtitle="From raw float glass scoring to high-precision diamond edge bevelling, Premiere Enterprise has defined luxury architectural glazing and custom mirror installations across Kolkata for over a decade."
         />
+
+        {/* Editorial Story Block: About Premiere Enterprise & Skilled Manpower */}
+        <div className="max-w-4xl mx-auto mb-10 sm:mb-14 p-6 sm:p-8 rounded-3xl bg-slate-950/70 border border-amber-400/30 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+          {/* Top Specular Hairline */}
+          <div className="absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent via-amber-400/60 to-transparent shadow-[0_1px_8px_rgba(245,158,11,0.3)]" />
+          <div className="absolute -top-16 -right-16 w-48 h-48 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+
+          {/* Eyebrow Ethos Pill */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300 font-mono text-[11px] font-bold tracking-widest uppercase mb-4 shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <span>Our Craftsmanship & Workforce Ethos</span>
+          </div>
+
+          <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+            At Premiere Enterprise, glass is not simply an architectural component — it is a canvas of light, reflection, and spatial transformation. With over 10 years of craft excellence in Kolkata, we specialize in glass fabrication, designer LED mirrors, and modern architectural infrastructure.
+          </p>
+
+          <p className="mt-4 text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+            By investing in high-precision edge-beveling machinery, diamond grinding belts, and computerized scoring tables, we maintain complete end-to-end quality control from raw float sheets to final turnkey installations.
+          </p>
+
+          <p className="mt-4 text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+            What truly powers our consistent execution is our <span className="text-amber-300 font-bold">highly skilled personnel and robust manpower</span>. With a large in-house team of seasoned glass craftsmen, CNC fabricators, structural glazing specialists, and certified on-site installers, we have the capacity to handle large commercial and luxury residential projects smoothly — delivering with zero bottlenecks, rapid turnarounds, and flawless precision.
+          </p>
+        </div>
 
         {/* Luxury Glass Segmented Tab Bar with Sliding Amber Indicator */}
         <div className="flex items-center justify-center mb-10 sm:mb-14">

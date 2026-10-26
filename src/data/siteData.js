@@ -41,8 +41,8 @@ export const siteData = {
     name: "Premiere Enterprise",
     shortName: "Premiere Enterprise",
     tagline: "spells quality",
-    brandStatement: "Architectural Glass, Designer Mirrors & Premium Interior Infrastructure",
-    description: "Premiere Enterprise is a trusted leader in architectural glass fabrication, designer smart LED mirrors, diamond-bevelled mirror wall panels, toughened glass partitions, UPVC windows, aluminium slidings, architectural hardware, and industrial epoxy flooring in Kolkata.",
+    description: "Premiere Enterprise is a trusted leader in architectural glass fabrication, designer smart LED mirrors, diamond-bevelled mirror wall panels, toughened glass partitions, UPVC windows, aluminium slidings, architectural hardware, and industrial epoxy flooring in Kolkata. Powered by seasoned glass craftsmen and ample skilled manpower, we ensure smooth turnkey execution with zero delays.",
+    workforceCapacity: "Skilled Personnel & Ample Manpower for Smooth Turnkey Execution",
     founded: "2014",
     experienceYears: "10+ Years Craft",
     completedProjects: "500+",
@@ -427,7 +427,7 @@ export const siteData = {
     }
   ],
 
-  // Real Gallery Items (9 authentic photos)
+  // Real Gallery Items (Master Project Installations First, Workshop Creation Videos in Dedicated Category)
   gallery: [
     {
       id: 1,
@@ -565,6 +565,36 @@ export const siteData = {
       image: showerEnclosuresImg,
       description: "Contemporary luxury walk-in shower cabin crafted with vertical fluted privacy glass, matte black architectural hardware, and precision water seals.",
       specs: "10mm Reeded Fluted Safety Glass | Matte Black SS 304 Fittings | Hydrophobic Nano-Shield"
+    },
+    {
+      id: "video-1",
+      title: "In-House Glass Cutting & Scoring Craftsmanship",
+      category: "Workshop Videos",
+      video: "/videos/videos1.mp4",
+      image: "/videos/videos1.mp4",
+      isVideo: true,
+      description: "Live workshop footage of raw float glass cutting, precision scoring tables, and manual handling by seasoned glass craftsmen in Kolkata.",
+      specs: "Workshop Video 1 • 0.2mm Precision Scoring • In-House Fabrication"
+    },
+    {
+      id: "video-2",
+      title: "Diamond Belt Edge-Bevelling & Grinding In Action",
+      category: "Workshop Videos",
+      video: "/videos/videos2.mp4",
+      image: "/videos/videos2.mp4",
+      isVideo: true,
+      description: "Industrial heavy-duty diamond grinding belts in action, polishing and creating brilliant 12mm–25mm bevelled edges on custom glass and mirrors.",
+      specs: "Workshop Video 2 • Diamond Belt Machine • Mirror Edge Bevelling"
+    },
+    {
+      id: "video-3",
+      title: "Architectural Mirror & LED Assembly Creation",
+      category: "Workshop Videos",
+      video: "/videos/videos3.mp4",
+      image: "/videos/videos3.mp4",
+      isVideo: true,
+      description: "Complete fabrication and electrical integration of luxury illuminated smart LED mirrors and structural glass assemblies inside our Kolkata facility.",
+      specs: "Workshop Video 3 • Bespoke Mirror Assembly • Certified Craftsmanship"
     }
   ],
 

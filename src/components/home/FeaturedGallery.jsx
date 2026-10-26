@@ -37,7 +37,7 @@ export default function FeaturedGallery() {
         .filter(Boolean);
     }
     return siteData.gallery.filter(item => 
-      item.category.toLowerCase().includes(activeCategory.toLowerCase())
+      !item.isVideo && item.category.toLowerCase().includes(activeCategory.toLowerCase())
     );
   };
 

@@ -8,7 +8,8 @@ import {
   Eye, 
   ArrowRight, 
   Sparkles, 
-  Maximize2
+  Maximize2,
+  Users
 } from 'lucide-react';
 import { siteData } from '../../data/siteData';
 import SectionHeading from '../common/SectionHeading';
@@ -177,10 +178,14 @@ export default function WorkshopCraftsmanship() {
               </h3>
 
               <p className="mt-4 text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
-                Every piece of glass and mirror that leaves our facility undergoes rigorous multi-stage edge polishing, laser dimensional verification, and optical surface checks. Because we fabricate locally in North Kolkata, we offer rapid turnarounds and direct factory pricing.
+                By investing in high-precision edge-beveling machinery, diamond grinding belts, and computerized scoring tables, we maintain complete end-to-end quality control from raw float sheets to final turnkey installations.
               </p>
 
-              {/* 3 Capability Cards with Border Highlights & Jewel Icons */}
+              <p className="mt-3 text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
+                What truly powers our consistent execution is our <span className="text-amber-300 font-bold">highly skilled personnel and robust manpower</span>. With a large in-house team of seasoned glass craftsmen, CNC fabricators, structural glazing specialists, and certified on-site installers, we have the capacity to handle large commercial and luxury residential projects smoothly — delivering with zero bottlenecks, rapid turnarounds, and flawless precision.
+              </p>
+
+              {/* 4 Capability Cards with Border Highlights & Jewel Icons */}
               <div className="mt-6 space-y-3.5">
                 
                 {/* Benefit 1 */}
@@ -239,6 +244,26 @@ export default function WorkshopCraftsmanship() {
                     </div>
                     <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                       Heat-treated safety glass compliance assuring extreme mechanical strength and structural peace of mind.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Benefit 4 */}
+                <div className="p-4 rounded-2xl glass-panel border border-white/10 border-l-2 border-l-amber-400 bg-slate-900/50 hover:bg-slate-900/80 hover:border-amber-400/30 transition-all duration-300 flex items-start gap-3.5 group/cap">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-300 flex items-center justify-center shrink-0 mt-0.5 group-hover/cap:bg-amber-400 group-hover/cap:text-slate-950 transition-colors shadow-sm">
+                    <Users className="w-5 h-5 stroke-[2]" />
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <h5 className="text-sm font-bold text-white group-hover/cap:text-amber-200 transition-colors">
+                        Skilled Personnel & Ample Manpower
+                      </h5>
+                      <span className="text-[10px] font-mono text-amber-400/90 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-400/20">
+                        Smooth Workflow
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                      Equipped with experienced glass masters and adequate manpower to execute projects smoothly, reliably, and on-time across Bengal.
                     </p>
                   </div>
                 </div>
