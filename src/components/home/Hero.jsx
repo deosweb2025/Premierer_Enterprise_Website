@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Sparkles, 
-  ArrowRight, 
+import {
+  Sparkles,
+  ArrowRight,
   ChevronDown
 } from 'lucide-react';
 
@@ -98,9 +98,18 @@ export default function Hero() {
   // Whenever user scrolls back up into Hero, music automatically resumes smoothly every time
   useEffect(() => {
     const checkHeroVisibility = () => {
-      const scrollY = window.scrollY || window.pageYOffset || 0;
-      const heroHeight = heroRef.current ? heroRef.current.offsetHeight : (window.innerHeight || 800);
-      const isVisible = scrollY < heroHeight * 0.75;
+      if (!heroRef.current) {
+        if ((window.scrollY || 0) < 350) {
+          cinematicAudio.onEnterHero();
+        } else {
+          cinematicAudio.onLeaveHero();
+        }
+        return;
+      }
+
+      const rect = heroRef.current.getBoundingClientRect();
+      // Hero is active when bottom edge is sufficiently in view and top hasn't completely scrolled up
+      const isVisible = rect.bottom > 150 && rect.top <= 80;
 
       if (isVisible) {
         cinematicAudio.onEnterHero();
@@ -112,6 +121,24 @@ export default function Hero() {
     // Check immediately on mount
     checkHeroVisibility();
 
+    // IntersectionObserver for hardware-accelerated visibility detection
+    let observer = null;
+    if ('IntersectionObserver' in window && heroRef.current) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
+              cinematicAudio.onEnterHero();
+            } else if (!entry.isIntersecting || entry.intersectionRatio < 0.10) {
+              cinematicAudio.onLeaveHero();
+            }
+          });
+        },
+        { threshold: [0, 0.1, 0.2, 0.5] }
+      );
+      observer.observe(heroRef.current);
+    }
+
     // Scroll and resize listeners for instant response
     window.addEventListener('scroll', checkHeroVisibility, { passive: true });
     window.addEventListener('resize', checkHeroVisibility, { passive: true });
@@ -119,20 +146,21 @@ export default function Hero() {
     // Handle tab focus / blur (pause when switching tabs, resume when returning to hero)
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        cinematicAudio.pause();
+        cinematicAudio.pause(true);
       } else {
         checkHeroVisibility();
       }
     };
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // Initial delayed checks to ensure DOM layout and splash transition are stabilized
-    const timer1 = setTimeout(checkHeroVisibility, 150);
-    const timer2 = setTimeout(checkHeroVisibility, 700);
+    // Initial delayed checks (100ms and 500ms) to ensure DOM layout and splash transition are stabilized
+    const timer1 = setTimeout(checkHeroVisibility, 100);
+    const timer2 = setTimeout(checkHeroVisibility, 600);
 
     return () => {
       clearTimeout(timer1);
       clearTimeout(timer2);
+      if (observer) observer.disconnect();
       window.removeEventListener('scroll', checkHeroVisibility);
       window.removeEventListener('resize', checkHeroVisibility);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
@@ -165,6 +193,16 @@ export default function Hero() {
       ref={heroRef}
       className="relative min-h-[100dvh] sm:h-screen sm:min-h-[580px] sm:max-h-[1080px] w-full flex flex-col justify-between overflow-hidden bg-gradient-to-b from-[#131929] via-[#0f1422] to-[#0c101a] select-none"
     >
+      {/* Native In-DOM Audio element for instant hardware decode & autoplay */}
+      <audio
+        id="hero-ambient-audio"
+        src="/audio/hero-ambience.mp3"
+        autoPlay
+        loop
+        playsInline
+        preload="auto"
+        className="hidden pointer-events-none"
+      />
       {/* ========================================================================= */}
       {/* 1A. MOBILE VIEW BACKGROUND: High-End Smoked Mirror Glass Texture          */}
       {/* ========================================================================= */}
@@ -223,7 +261,7 @@ export default function Hero() {
       {/* 2A. MOBILE VIEW CONTENT: Editorial Mirror Atelier Composition (< sm)      */}
       {/* ========================================================================= */}
       <div className="sm:hidden relative z-30 flex-1 flex flex-col justify-between px-4 pt-20 pb-5 max-w-lg mx-auto w-full">
-        
+
 
 
         {/* TOP POSITION: Eyebrow Badge & Big Heading (Above Image Card) */}
@@ -232,7 +270,7 @@ export default function Hero() {
             <Sparkles className="w-3 h-3 text-amber-400 shrink-0" />
             <span className="font-bold text-amber-300 tracking-wider">10+ YEARS CRAFT • KOLKATA</span>
             <span className="text-white/30">•</span>
-            <span 
+            <span
               className="italic font-serif text-white/95 font-medium tracking-wide"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
@@ -252,7 +290,7 @@ export default function Hero() {
         {/* MIDDLE POSITION: Center Image Card with Liquid Gold Border Animation (Enlarged for Clear Visibility) */}
         <div className="my-3.5 relative rounded-2xl p-[1.5px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
           {/* Animated Liquid Gold Border Beam Tracing Perimeter */}
-          <div 
+          <div
             className="absolute -inset-[150%] bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,transparent_300deg,rgba(245,158,11,0.25)_330deg,rgba(251,191,36,0.95)_350deg,transparent_360deg)] animate-border-beam opacity-90 pointer-events-none"
           />
 
@@ -345,16 +383,16 @@ export default function Hero() {
       {/* 2B. DESKTOP MAIN HERO CONTENT: Preserved Desktop Layout                   */}
       {/* ========================================================================= */}
       <div className="hidden sm:flex relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex-col justify-center pt-24 pb-6">
-        
+
         {/* Main Editorial Narrative */}
         <div ref={contentRef} className="max-w-xl lg:max-w-2xl flex flex-col items-start">
-          
+
           {/* Elegant Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/55 border border-amber-400/30 text-[11px] sm:text-xs font-semibold shadow-md mb-3.5 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
             <span className="font-bold text-amber-300 tracking-wider">10+ YEARS CRAFT • KOLKATA</span>
             <span className="text-white/30">•</span>
-            <span 
+            <span
               className="italic font-serif text-white/95 font-medium tracking-wide drop-shadow-sm"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
@@ -406,7 +444,7 @@ export default function Hero() {
         className="hidden sm:block relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 pt-2"
       >
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-white/10 text-xs">
-          
+
           {/* Slide Indicator & Craft Tagline */}
           <div className="flex items-center gap-2.5">
             <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-300 font-mono text-xs font-bold shadow-sm">

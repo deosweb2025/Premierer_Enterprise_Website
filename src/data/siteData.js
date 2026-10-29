@@ -70,7 +70,7 @@ export const siteData = {
     // Embed map centered on exact K. Bose Sarani coordinates (22.6247202, 88.4185505)
     googleMapsEmbed: "https://maps.google.com/maps?q=22.6247202,88.4185505&t=&z=16&ie=UTF8&iwloc=&output=embed",
     businessHours: {
-      weekdays: "Monday – Saturday: 10:00 AM – 8:30 PM",
+      weekdays: "Monday – Saturday: 10:00 AM – 7:00 PM",
       sunday: "Sunday: Open / By Appointment",
       emergency: "On-Site Measurements Across Kolkata & West Bengal"
     }

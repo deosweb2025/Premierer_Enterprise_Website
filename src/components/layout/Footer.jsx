@@ -207,7 +207,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="font-bold hover:text-red-700 transition-colors duration-300 ml-1"
             >
-              Digital Exposure Online
+              Digital Exposure Online service
             </a>
           </p>
         </div>
